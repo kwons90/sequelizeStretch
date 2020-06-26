@@ -17,11 +17,21 @@ const Recipe = db.define('Recipe', {
         }
     },
     cookTime: {
-        type: Number,
+        type:Sequelize.INTEGER,
+        validate:
+        {
+            min: 1,
+            max: 60
+        }
     },
     vegan: {
-        type: Boolean,
+        type: Sequelize.BOOLEAN,
+    },
+    foodGroup: {
+        type: Sequelize.ENUM,
+        values: ['vegetable','meat','dairy','grain','fruit']
     }
+
 });
 
 
