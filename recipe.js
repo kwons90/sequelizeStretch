@@ -1,5 +1,6 @@
 const db = require('./dbConfig');
-const {Sequelize, UUID, UUIDV4} = require('sequelize');
+const Sequelize = require('sequelize');
+const {UUID, UUIDV4} = Sequelize
 
 const Recipe = db.define('Recipe', {
     id: {
@@ -18,6 +19,9 @@ const Recipe = db.define('Recipe', {
     cookTime: {
         type: Number,
     },
+    vegan: {
+        type: Boolean,
+    }
 });
 
 
